@@ -1,0 +1,120 @@
+Day 23
+
+Git revert
+
+Git revert is used to undo the committed changes. History will be tracked
+
+Syntax:
+
+git revert <commit_id>
+it will revert the changes made in that commit id
+
+git revert HEAD
+it will revert the changes made in the recent/latest commit
+
+git revert HEAD~1
+it will revert the changes made in the last but one commit
+
+-----------------------------------------------------------------------
+
+Git reset
+
+Git reset is used to undo the committed changes but history will not be tracked. The name itself indicates reset HEAD to the previous commits.
+
+There are 3 types:
+1) Mixed reset
+	It is used to move the files from local git repo, back to the workspace
+	Syntax:
+		git reset --mixed <commit_id>
+2) Soft reset
+	It will remove the changes from the local git repo to the staging area. it removes the history.
+	Syntax:
+		git reset --soft <commit_id>
+3) Hard reset
+	There will be no clue that we have committed changes. It will remove history and changes from everywhere(git repo, staging area, workspace).
+	Syntax:
+		git reset --hard <commit_id>
+
+-----------------------------------------------------------------------------
+
+Difference between git rebase and git merge
+-> Merge just integrates the changes from one branch to another branch.
+-> Rebase is nothing but a merge. One branch will get added to the tip of another branch
+-> using git rebase we can squash multiple commits as a single commit and then we can merge the changes
+
+git rebase
+
+Syntax:
+git rebase <branch_name>
+it will merge the changes to the switched/current branch
+
+git rebase -i HEAD~10
+it will squash recent 10 commits as a single commit
+
+-----------------------------------------------------------------------------
+
+git pull
+
+git pull will bring the changes from the remote repo to the local workspace and merges automatically to the respective branch.
+
+Syntax:
+
+git pull origin <branch_name>
+
+--------------------------------------------------------------------------------
+
+git fetch
+
+git fetch will bring the changes from the remote repo to the local workspace and stores it in a separate branch in local repo. We can review the changes and merge if required.
+
+Syntax:
+
+git fetch origin <branch_name>
+
+NOTE:
+git pull = git fetch + git merge
+
+
+
+git stash
+
+When we are working on one branch, if we get any critical bug which needs to be fixed on other branch. Before switching to the other branch, we need to stash incomplete work on the current branch. Once we fix the bug, we need to switch back to the current branch and pop the changes from the stash entry and continue with the work.
+This will avoid committing the code on wrong branches
+
+git add .
+git stash 
+it will move the changes to the stash entry
+
+git stash list
+it will list all the stashed entries.
+
+git stash pop
+it will retrieve the recent stash entry
+
+git stash pop stash@{1}
+it will retrieve the specific stash entry
+
+git stash drop
+it will delete the recent entry
+
+git stash drop stash@{1}
+it will delete the specific stash entry
+
+git stash clear
+it will delete all the stash entry.
+------------------------------------------------------------------------------
+
+How to merge specific commit
+git cherry-pick <commit_id>
+
+
+
+
+
+
+
+
+
+
+
+
