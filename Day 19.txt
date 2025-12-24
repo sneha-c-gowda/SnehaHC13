@@ -1,0 +1,20 @@
+Day 19
+
+GIT
+
+Git is a version control tool used to keep track of the versions of files and directories.
+
+Git Workflow/Git Architecture
+
+1. Workspace
+	-> Place where we create and edit application related the files
+2. Staging Area
+	-> Intermediate Temporary area to store the changes
+3. Git Repo
+	Local and Central Repo
+	-> Versions of files will be tracked here. Using git commit command, files will be moved to the local git repo.
+
+Creating Repositories
+Adding files in the GitHub UI
+Renaming and Updating the files in GitHub UI
+Created a Personal Access Token
